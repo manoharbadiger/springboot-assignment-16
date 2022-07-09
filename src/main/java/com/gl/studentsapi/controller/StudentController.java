@@ -30,6 +30,11 @@ public class StudentController {
 		return studentService.findAllStudents();
 	}
 	
+	@GetMapping("/{id}")
+	public Student fetchStudent(@PathVariable("id") long studentId) {
+		return studentService.findById(studentId);
+	}
+	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Student saveStudent(@RequestBody Student student) {
