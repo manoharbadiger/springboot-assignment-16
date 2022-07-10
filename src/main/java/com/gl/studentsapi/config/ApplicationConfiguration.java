@@ -31,7 +31,12 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 		// configure authorization rules here
 		httpSecurity.cors().disable();
+		httpSecurity.headers().frameOptions().disable();
 		httpSecurity.csrf().disable();
+		httpSecurity.authorizeRequests()
+		  .antMatchers("/h2-console**", "/h2-console/**")
+		  	.permitAll();
+
 		httpSecurity.authorizeRequests().antMatchers(HttpMethod.GET, "/api/students/**").hasAnyRole("USER", "ADMIN")
 				.and().authorizeRequests().antMatchers(HttpMethod.POST, "/api/students/**").hasRole("ADMIN")
 

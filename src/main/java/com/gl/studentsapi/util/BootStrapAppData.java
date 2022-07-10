@@ -40,8 +40,7 @@ public class BootStrapAppData implements ApplicationListener<ApplicationReadyEve
 		Role adminRole=new Role();
 		adminRole.setRoleName("ROLE_ADMIN");
 		
-		roleRepository.save(userRole);
-		roleRepository.save(adminRole);
+		
 		
 		User user=new User();
 		user.setUserName("ravi");
@@ -58,6 +57,8 @@ public class BootStrapAppData implements ApplicationListener<ApplicationReadyEve
 		
 		userRepository.save(user);
 		userRepository.save(admin);
+		roleRepository.save(userRole);
+		roleRepository.save(adminRole);
 	}
 
 }
