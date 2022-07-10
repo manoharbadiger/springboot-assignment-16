@@ -37,8 +37,8 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter {
 		  .antMatchers("/h2-console**", "/h2-console/**")
 		  	.permitAll();
 
-		httpSecurity.authorizeRequests().antMatchers(HttpMethod.GET, "/api/students/**").hasAnyRole("USER", "ADMIN")
-				.and().authorizeRequests().antMatchers(HttpMethod.POST, "/api/students/**").hasRole("ADMIN")
+		httpSecurity.authorizeRequests().antMatchers(HttpMethod.GET, "/api/students**").hasAnyRole("USER", "ADMIN")
+				.and().authorizeRequests().antMatchers(HttpMethod.POST, "/api/students**").hasRole("ADMIN")
 
 				.antMatchers(HttpMethod.DELETE, "/api/students/**").hasRole("ADMIN").anyRequest().authenticated()
 

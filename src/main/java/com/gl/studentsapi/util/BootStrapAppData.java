@@ -43,12 +43,12 @@ public class BootStrapAppData implements ApplicationListener<ApplicationReadyEve
 		
 		
 		User user=new User();
-		user.setUserName("ravi");
-		user.setPassword("test123");
+		user.setUserName("user");
+		user.setPassword("user");
 		
 		User admin=new User();
-		admin.setUserName("satya");
-		admin.setPassword("testadmin");
+		admin.setUserName("admin");
+		admin.setPassword("admin");
 				
 		admin.addRole(adminRole);
 		admin.addRole(userRole);
