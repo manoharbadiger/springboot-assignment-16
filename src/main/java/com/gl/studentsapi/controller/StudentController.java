@@ -32,11 +32,11 @@ public class StudentController {
     public List<Student> sortedOrder(@RequestParam(name = "order") String order) {
         if (order.equalsIgnoreCase("asc")) {
             List<Student> sortedStudents = studentService.findAllStudents();
-            Collections.sort(sortedStudents, Comparator.comparing(Student::getFirstName).reversed());
+            Collections.sort(sortedStudents, Comparator.comparing(Student::getFirstName));
             return sortedStudents;
         } else if (order.equalsIgnoreCase("desc")) {
             List<Student> sortedStudents = studentService.findAllStudents();
-            Collections.sort(sortedStudents, Comparator.comparing(Student::getFirstName));
+            Collections.sort(sortedStudents, Comparator.comparing(Student::getFirstName).reversed());
             return sortedStudents;
         }
         return studentService.findAllStudents();
