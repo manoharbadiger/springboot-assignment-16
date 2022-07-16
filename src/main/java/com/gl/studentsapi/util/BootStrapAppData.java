@@ -29,7 +29,7 @@ public class BootStrapAppData implements ApplicationListener<ApplicationReadyEve
 		// implement faker here
 		for(int i=0; i<10; i++) {
 			Student student = new Student();
-			student.setFirstName("Sameer" + i);
+			student.setFirstName("Manohar" + i);
 			student.setLastName("asd" + i);
 			student.setCountry("In" + i);
 			student.setCourse("IT" + i);
